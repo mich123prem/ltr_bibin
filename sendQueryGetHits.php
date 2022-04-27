@@ -5,13 +5,16 @@ $SESSION['configs']=include_once "admin/config.php";
 print("session_config=" . $SESSION['configs']);
 print_r($SESSION['configs']);
 include_once "html.inc.php";
-print("after include html.inc.php");
+print("<p>after include html.inc.php</p>");
 include_once "elastic.inc.php";
+print("<p>after include elastic.inc.php</p>");
+
 #include_once "memcache.inc.php";
 include_once "mysql.inc.php";
+print("<p>after include mysql.inc.php</p>");
 if (!isset($_GET['fromDropDown']))
 	die("no query number");
-
+print("<p>included all");
 $qid=$_GET['fromDropDown'];
 $_SESSION['qid']=$qid;
 $qt=qid2qry($qid);
