@@ -5,6 +5,7 @@ $SESSION['configs']=include_once "admin/config.php";
 print("session_config=" . $SESSION['configs']);
 print_r($SESSION['configs']);
 include_once "html.inc.php";
+print("after include html.inc.php");
 include_once "elastic.inc.php";
 #include_once "memcache.inc.php";
 include_once "mysql.inc.php";
