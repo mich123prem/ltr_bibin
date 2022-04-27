@@ -2,6 +2,7 @@
 if (!isset($_SESSION))
 	session_start();
 $SESSION['configs']=include_once "admin/config.php";
+print("session_config=" . $SESSION['configs']);
 include_once "html.inc.php";
 include_once "elastic.inc.php";
 #include_once "memcache.inc.php";
