@@ -18,10 +18,13 @@ print("<p>included all");
 $qid=$_GET['fromDropDown'];
 $_SESSION['qid']=$qid;
 $qt=qid2qry($qid);
-
+print("<p>qt=$qt </p>");
 $query_json = getQuery( $queryTerm = $qt, $nr_hits = $SESSION['configs']['hitsPerQuery'] +2);
+print("<p>query_json=$query_json </p>");
+
 //print("qj:" . $query_json);
 $json=sendQuery( $query_json );
+print("<p>query sent </p>");
 $json = preg_replace('/(\'|&#0*39;)/', '', $json);
 $res = json_decode($json , true );
 $hits = $res[ 'hits' ][ 'hits' ];
