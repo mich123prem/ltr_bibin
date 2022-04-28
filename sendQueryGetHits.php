@@ -1,5 +1,5 @@
 <?php
-print("<p>entering:", __FILE__, "</p>");
+print("<p>entering:sQgh</p>");
 if (!isset($_SESSION))
 	session_start();
 $SESSION['configs']=include_once "admin/config.php";
