@@ -1,5 +1,4 @@
 <?php
-print("<p>entering:sQgh</p>");
 if (!isset($_SESSION))
 	session_start();
 $SESSION['configs']=include_once "admin/config.php";
@@ -14,19 +13,12 @@ if (!isset($_GET['fromDropDown']))
 $qid=$_GET['fromDropDown'];
 $_SESSION['qid']=$qid;
 $qt=qid2qry($qid);
-print("<p>qt=$qt </p>");
 $query_json = getQuery( $queryTerm = $qt, $nr_hits = $SESSION['configs']['hitsPerQuery'] +2);
-print("<p>query_json=$query_json </p>");
 
-//print("qj:" . $query_json);
 $json=sendQuery( $query_json );
-print("<p>query sent </p>");
 $json = preg_replace('/(\'|&#0*39;)/', '', $json);
 $res = json_decode($json , true );
 $hits = $res[ 'hits' ][ 'hits' ];
-print("<p>found hits:");
-print(count($hits));
-print("</p>");
 /*
 if (!($_SESSION['hitHash'] = $m -> get('hitHash'))) {
 	  $hh = array();
