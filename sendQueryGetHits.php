@@ -18,14 +18,16 @@ print("<p>included all");
 $qid=$_GET['fromDropDown'];
 $_SESSION['qid']=$qid;
 $qt=qid2qry($qid);
-
+pr
 $query_json = getQuery( $queryTerm = $qt, $nr_hits = $SESSION['configs']['hitsPerQuery'] +2);
 //print("qj:" . $query_json);
 $json=sendQuery( $query_json );
 $json = preg_replace('/(\'|&#0*39;)/', '', $json);
 $res = json_decode($json , true );
 $hits = $res[ 'hits' ][ 'hits' ];
-
+print("<p>found hits:");
+print(count($hits));
+print("</p>");
 /*
 if (!($_SESSION['hitHash'] = $m -> get('hitHash'))) {
 	  $hh = array();
