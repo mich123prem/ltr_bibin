@@ -22,7 +22,7 @@ QRY;
 function sendQuery($query){
   $curl = "http://localhost:9200/" . "publication" . "/_search";
   $ch = curl_init();
-
+  print("entered sendQuery");
   // set URL and other appropriate options
   //For å få resultatet i retur 
   curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
@@ -30,8 +30,9 @@ function sendQuery($query){
   curl_setopt( $ch, CURLOPT_POSTFIELDS, $query );
   curl_setopt( $ch, CURLOPT_HTTPHEADER, array( 'Content-Type: application/json' ) );
   curl_setopt( $ch, CURLOPT_URL, $curl );
-
+  $ret=curl_exec( $ch );
+  print("<p>returning from curl</p>");
   //Få resultatet i retur
-  return  curl_exec( $ch );	
+  return ret;
 }
 ?>
