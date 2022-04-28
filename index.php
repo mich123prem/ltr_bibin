@@ -24,7 +24,7 @@ if (!isset($_SESSION['dblink']) || gettype($_SESSION['dblink']) != "resource" )
 	
 
 	include_once "head.html";
-	print("entering<br/>");
+	//print("entering<br/>");
 	//print( closeIndex() );
 	$settingData = getMainSettings();
 	$curl = "http://localhost:9200/publication/_settings";
@@ -40,7 +40,7 @@ if (!isset($_SESSION['dblink']) || gettype($_SESSION['dblink']) != "resource" )
 
 	//Få resultatet i retur
 	$out = curl_exec( $ch );
-	print( " opening index <br/>" );
+	//print( " opening index <br/>" );
 
 ?>
 <?php endif ?>
