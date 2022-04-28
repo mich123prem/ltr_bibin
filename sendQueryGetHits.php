@@ -3,7 +3,7 @@ print("<p>entering:sQgh</p>");
 if (!isset($_SESSION))
 	session_start();
 $SESSION['configs']=include_once "admin/config.php";
-print("session_config=" . $SESSION['configs']);
+
 print_r($SESSION['configs']);
 include_once "html.inc.php";
 print("<p>after include html.inc.php</p>");

@@ -34,6 +34,6 @@ function sendQuery($query){
   $ret=curl_exec( $ch );
   print("<p>returning from curl</p>");
   //Få resultatet i retur
-  return ret;
+  return $ret;
 }
 ?>
