@@ -1,4 +1,5 @@
 <?php
+print("<p>entering:", __FILE__, "</p>");
 if (!isset($_SESSION))
 	session_start();
 $SESSION['configs']=include_once "admin/config.php";

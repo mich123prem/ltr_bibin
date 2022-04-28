@@ -3,6 +3,7 @@
 #die();
 #print(get_include_path());
 #die();
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 if (!isset($_SESSION))
 	session_start();
 #$_SESSION["user"]=1;
