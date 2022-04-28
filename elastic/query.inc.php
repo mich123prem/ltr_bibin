@@ -20,9 +20,10 @@ QRY;
   ~xs', '$1', $query );
 }
 function sendQuery($query){
+  print("<p>entered sendQuery</p>");
   $curl = "http://localhost:9200/" . "publication" . "/_search";
   $ch = curl_init();
-  print("entered sendQuery");
+  print("<p>initialized curl</p>");
   // set URL and other appropriate options
   //For å få resultatet i retur 
   curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
