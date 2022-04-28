@@ -18,7 +18,7 @@ print("<p>included all");
 $qid=$_GET['fromDropDown'];
 $_SESSION['qid']=$qid;
 $qt=qid2qry($qid);
-pr
+
 $query_json = getQuery( $queryTerm = $qt, $nr_hits = $SESSION['configs']['hitsPerQuery'] +2);
 //print("qj:" . $query_json);
 $json=sendQuery( $query_json );
