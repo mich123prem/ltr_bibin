@@ -19,19 +19,20 @@ $json=sendQuery( $query_json );
 $json = preg_replace('/(\'|&#0*39;)/', '', $json);
 $res = json_decode($json , true );
 $hits = $res[ 'hits' ][ 'hits' ];
-/*
-if (!($_SESSION['hitHash'] = $m -> get('hitHash'))) {
-	  $hh = array();
-	  $m -> set('hitHash', $hh);
-	  $_SESSION['hitHash']=&$hh;
-}
-	else{
-		$hh=&$_SESSION['hitHash'];
-	}
-*/
-$hash=array(); // the associative array for avoiding repeat of $work_id . mediaType
 
+        /* IN CASE WE WISH TO EMPLOY MEMCACHE
+        if (!($_SESSION['hitHash'] = $m -> get('hitHash'))) {
+              $hh = array();
+              $m -> set('hitHash', $hh);
+              $_SESSION['hitHash']=&$hh;
+        }
+            else{
+                $hh=&$_SESSION['hitHash'];
+            }
+        */
+$hash=array(); // the associative array for avoiding repeat of $work_id . mediaType
 $_SESSION['hitHash']=&$hash;
+
 $hh=array(); // The sequential array with numbered hits.
 $_SESSION['hitArray']=&$hh;
 $i = 0;
@@ -42,7 +43,8 @@ foreach ( $hits AS $hit ) {
 
   $obj = json_decode( json_encode( $hit, true ) );
   $obj= $obj->_source;
-
+  var_dump($obj);
+  die();
   $ky=$obj->work->id . $obj->mediaType;
   if (isset($hash[$ky]))
       continue;
