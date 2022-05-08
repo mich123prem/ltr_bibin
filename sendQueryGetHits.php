@@ -44,7 +44,8 @@ foreach ( $hits AS $hit ) {
   $obj = json_decode( json_encode( $hit, true ) );
   $obj= $obj->_source;
   var_dump($obj);
-  print($obj->languages);
+  print("_____________________________________");
+  var_dump($obj->languages);
   die();
   $ky=$obj->work->id . $obj->mediaType;
   if (isset($hash[$ky]))
