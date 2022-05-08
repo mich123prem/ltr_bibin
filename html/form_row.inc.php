@@ -121,6 +121,7 @@ TBL;
 	    <hr/>    
 	        Målgruppe:<br/>$audiences
 	        <br/>
+	     <hr/>       
 	        Språk:<br/>$languages
 	        <br/>
 	    <hr/>Format:<br/>$format
