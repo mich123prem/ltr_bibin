@@ -45,6 +45,8 @@ foreach ( $hits AS $hit ) {
   $obj= $obj->_source;
   var_dump($obj);
   print("_____________________________________");
+  print($obj->languages[0]);
+  print("_____________________________________");
   var_dump($obj->languages);
   die();
   $ky=$obj->work->id . $obj->mediaType;
