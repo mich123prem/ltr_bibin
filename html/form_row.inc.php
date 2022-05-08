@@ -114,17 +114,17 @@ TBL;
 	$tbl.=<<<TBL
 
 	<!--<td style="padding:10px;white-space:nowrap">"$query"</td>-->
-	<td class="infocolumn">Tittel:<br/> $title<br/>
-	    <hr/>Forfatter:<br/>$author<br/>
+	<td class="infocolumn"><span class="sterk">Tittel:</span><br/> $title<br/>
+	    <hr/><span class="sterk">Forfatter:</span><br/>$author<br/>
 	    <hr/>
-	        Sjanger:<br/>$description
+	        <span class="sterk">Sjanger</span>:<br/>$description
 	    <hr/>    
-	        Målgruppe:<br/>$audiences
+	        <span class="sterk">Målgruppe</span>:<br/>$audiences
 	        <br/>
 	     <hr/>       
-	        Språk:<br/>$languages
+	        <span class="sterk">Språk</span>:<br/>$languages
 	        <br/>
-	    <hr/>Format:<br/>$format
+	    <hr/><span class="sterk">Format</span>:<br/>$format
 	 </td>
 	 <td>$image</td>
 	 <td >
