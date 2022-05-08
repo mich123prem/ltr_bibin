@@ -66,6 +66,9 @@ function func_row($i,/*Doc ordinal-number current qid (eks. 0-19 for 20 books pr
     $audiences="Ikke oppgitt";
     if (isset($hit->work->audiences))
         $audiences= join(";",$hit->work->audiences);
+    $languages="Ikke oppgitt";
+    if (isset($hit->languages))
+        $languages= join(";",$hit->languages);
 
     $docid=$hit->work->id . $hit->mediaType;
 
@@ -117,6 +120,8 @@ TBL;
 	        Sjanger:<br/>$description
 	    <hr/>    
 	        Målgruppe:<br/>$audiences
+	        <br/>
+	        Språk:<br/>$languages
 	        <br/>
 	    <hr/>Format:<br/>$format
 	 </td>
